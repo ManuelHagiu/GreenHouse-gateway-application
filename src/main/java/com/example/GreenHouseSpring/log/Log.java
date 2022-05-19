@@ -1,4 +1,4 @@
-package com.javatpoint.springGreenHouse.Log;
+package com.example.GreenHouseSpring.log;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.GenericGenerator;

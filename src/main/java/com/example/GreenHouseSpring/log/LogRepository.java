@@ -1,6 +1,6 @@
-package com.javatpoint.springGreenHouse.Log;
+package com.example.GreenHouseSpring.log;
 
-import com.javatpoint.springGreenHouse.Log.Log;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LogRepository extends JpaRepository<Log,Integer>

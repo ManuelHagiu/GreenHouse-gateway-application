@@ -1,13 +1,11 @@
-package com.javatpoint.springGreenHouse;
+package com.example.GreenHouseSpring;
 
 import java.sql.*;
 import java.time.LocalDate;
 
+import com.example.GreenHouseSpring.log.Log;
+import com.example.GreenHouseSpring.log.LogRepository;
 
-import com.javatpoint.springGreenHouse.Log.Log;
-import com.javatpoint.springGreenHouse.Log.LogRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

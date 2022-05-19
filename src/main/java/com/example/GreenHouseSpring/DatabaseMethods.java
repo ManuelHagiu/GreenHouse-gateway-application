@@ -1,6 +1,7 @@
-package com.javatpoint.springGreenHouse;
+package com.example.GreenHouseSpring;
 
-import com.javatpoint.springGreenHouse.Log.Log;
+import com.example.GreenHouseSpring.log.Log;
+
 
 public interface DatabaseMethods
 {
