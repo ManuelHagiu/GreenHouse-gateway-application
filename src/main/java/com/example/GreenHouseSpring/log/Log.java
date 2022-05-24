@@ -1,101 +1,90 @@
 package com.example.GreenHouseSpring.log;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.time.LocalDateTime;
 
-@Entity(name = "Log")
-@Table(name = "logs")
-
-
+@Entity @Table(name = "Logs", schema = "dbo", catalog = "GreenHouse")
 public class Log
 {
-  @Id
-  @GeneratedValue(generator = "sequence-generator")
-  @GenericGenerator(
-      name = "sequence-generator",
-      strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-      parameters = {
-          @org.hibernate.annotations.Parameter(name = "sequence_name", value = "log_sequence"),
-          @org.hibernate.annotations.Parameter(name = "initial_value", value = "1"),
-          @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
+  @GeneratedValue(strategy = GenerationType.IDENTITY) @Id @Column(name = "Id_Log", nullable = false) private int idLog;
+  @Basic @Column(name = "co2", nullable = true, precision = 2) private double co2;
+  @Basic @Column(name = "temperature", nullable = true, precision = 2) private double temperature;
+  @Basic @Column(name = "humidity", nullable = true, precision = 2) private double humidity;
+  @Basic @Column(name = "date", nullable = true) private LocalDateTime date;
+  @Basic @Column(name = "Id_Greenhouse", nullable = true) private Integer idGreenhouse;
 
-      }
-  )
-  @Column(updatable = false)
-  private Integer id;
-  @Column(nullable = false)
-  private int  co2 ;
-  @Column(nullable = false)
-  private int temperature ;
-  @Column(nullable = false)
-  private int humidity  ;
-  @Column(nullable = false)
-  private LocalDate date  ;
-  // @ManyToMany(mappedBy = "enrolledLog")
-  @JsonIgnoreProperties("enrolledLog")
-  //private Set<Project> projects;
-
-  Log() {
-  }
-
-  public Log(int co2, int temperature, int humidity, LocalDate date ) {
+  public Log(double co2, double temperature, double humidity,
+      LocalDateTime date, Integer idGreenhouse)
+  {
     this.co2 = co2;
     this.temperature = temperature;
     this.humidity = humidity;
     this.date = date;
-    // this.projects = new HashSet<>();
+    this.idGreenhouse = idGreenhouse;
   }
 
-  public Integer getId() {
-    return id;
+  public Log() {}
+
+  public int getIdLog()
+  {
+    return idLog;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setIdLog(int idLog)
+  {
+    this.idLog = idLog;
   }
 
-  public int getCo2() {
+  public double getCo2()
+  {
     return co2;
   }
 
-  public void setCo2(int co2) {
+  public void setCo2(double co2)
+  {
     this.co2 = co2;
   }
 
-  public int getTemperature() {
+  public double getTemperature()
+  {
     return temperature;
   }
 
-  public void setTemperature(int temperature) {
+  public void setTemperature(double temperature)
+  {
     this.temperature = temperature;
   }
 
-  public int getHumidity() {
+  public double getHumidity()
+  {
     return humidity;
   }
 
-  public void setHumidity(int humidity) {
+  public void setHumidity(double humidity)
+  {
     this.humidity = humidity;
   }
 
-  public LocalDate getDate() {
+  public LocalDateTime getDate()
+  {
     return date;
   }
 
-  public void setDate(LocalDate date) {
+  public void setDate(LocalDateTime date)
+  {
     this.date = date;
   }
 
-/* public Set<Project> getProjects() {
-    return projects;
+  public Integer getIdGreenhouse()
+  {
+    return idGreenhouse;
   }
 
-  public void setProjects(Set<Project> projects) {
-    this.projects = projects;
+  public void setIdGreenhouse(Integer idGreenhouse)
+  {
+    this.idGreenhouse = idGreenhouse;
   }
-}*/
 
 }

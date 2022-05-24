@@ -41,12 +41,12 @@ import java.util.List;
     // @ResponseBody means the returned String is the response, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
 
-    Log n = new Log();
-    n.setCo2(co2);
-    n.setTemperature(temperature);
-    n.setHumidity(humidity);
-    n.setDate(date);
-    repository.save(n);
+//    Log n = new Log();
+//    n.setCo2(co2);
+//    n.setTemperature(temperature);
+//    n.setHumidity(humidity);
+//    n.setDate(date);
+//    repository.save(n);
     return "Saved";
   }
 
