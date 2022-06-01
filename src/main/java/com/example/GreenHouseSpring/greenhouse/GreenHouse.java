@@ -16,7 +16,7 @@ public class GreenHouse
   @Basic @Column(name = "area", nullable = true, precision = 2) private BigDecimal area;
   @Basic @Column(name = "co2Preferred", nullable = true, precision = 2) private BigDecimal co2Preferred;
   @Basic @Column(name = "temperaturePreferred", nullable = true, precision = 2) private BigDecimal temperaturePreferred;
-  @Basic @Column(name = "humidityPreferred", nullable = true, precision = 2) private BigDecimal humidityPreferred;
+  @Basic @Column(name = "humidityPreferred", nullable = true, precision = 2) private Long humidityPreferred;
   @Basic @Column(name = "actuator", nullable = true) private Boolean actuator;
   @Basic @Column(name = "owner", nullable = true, length = 50) private String owner;
 
@@ -90,12 +90,12 @@ public class GreenHouse
     this.temperaturePreferred = temperaturePreferred;
   }
 
-  public BigDecimal getHumidityPreferred()
+  public Long getHumidityPreferred()
   {
     return humidityPreferred;
   }
 
-  public void setHumidityPreferred(BigDecimal humidityPreferred)
+  public void setHumidityPreferred(Long humidityPreferred)
   {
     this.humidityPreferred = humidityPreferred;
   }

@@ -1,5 +1,6 @@
 package com.example.GreenHouseSpring.service;
 
+
 import com.example.GreenHouseSpring.DatabaseMethods;
 import com.example.GreenHouseSpring.greenhouse.GreenHouse;
 import com.example.GreenHouseSpring.greenhouse.GreenHouseRepository;
@@ -38,6 +39,19 @@ import java.util.List;
     return logRepo.count();
   }
 
+  public void updateGreenHouse(GreenHouse greenHouse)
+  {
+    try
+    {
+      greenRepo.save(greenHouse);
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+
   @Override public void insertLog(Log log)
   {
     try
@@ -50,31 +64,32 @@ import java.util.List;
     }
   }
 
-  @Override public List<GreenHouse> getActiveActuators()
+  @Override public GreenHouse getLastHumidityPreferred()
   {
-    List<GreenHouse> listOfGreenHose = null;
+    GreenHouse greenHose = null;
     try
     {
-      listOfGreenHose = greenRepo.findAllByActuatorEquals(true);
+      greenHose = greenRepo.findTopByOrderByIdGreenhouseDesc();
     }
     catch (Exception e)
     {
       e.printStackTrace();
     }
-    return listOfGreenHose;
+    return greenHose;
   }
 
-  public List<GreenHouse> getGreenHousesByLocation(String locationName)
+  @Override public List<GreenHouse> getActiveActuators()
   {
-    List<GreenHouse> listOfGreenHose = null;
+    List<GreenHouse>  listOfGreenHouses = null;
     try
     {
-      listOfGreenHose = greenRepo.findByLocation(locationName);
+      listOfGreenHouses = greenRepo.findAllByActuatorEquals(true);
     }
     catch (Exception e)
     {
       e.printStackTrace();
     }
-    return listOfGreenHose;
+    return listOfGreenHouses;
   }
+
 }
