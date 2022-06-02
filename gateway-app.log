@@ -1,0 +1,18 @@
+Jun 02, 2022 11:19:37 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.
+Jun 02, 2022 11:21:32 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.
+Jun 02, 2022 11:21:32 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onText
+INFO: Received data: {"cmd":"ERROR","error_code":"WS_CONNECTION_LIMIT_REACHED","error_msg":"Connection limit of 10 reached"}
+Jun 02, 2022 11:21:32 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onClose
+WARNING: WebSocket closed!
+Jun 02, 2022 11:21:32 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onClose
+WARNING: Status:1005 Reason: 
+Jun 02, 2022 11:21:47 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.
+Jun 02, 2022 11:25:48 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.
+Jun 02, 2022 11:26:00 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.
+Jun 02, 2022 11:31:37 AM com.example.GreenHouseSpring.gateway_endpoint.LoRaClient onOpen
+INFO: WebSocket Listener has been opened for requests.

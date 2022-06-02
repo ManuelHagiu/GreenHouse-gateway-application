@@ -29,6 +29,7 @@ public class GreenHouseSpringApplication {
   }
 
   //Scheduled cron task every 20 seconds
+  //Check Greenhouse list if the actuator is true then send the data via Websocket to LoRa server and set to false.
   @Scheduled(cron = "0/20 * * * * ?")
   public void publish() throws JSONException {
     List<GreenHouse> listOfGreenHouses = greenHouseService.getActiveActuators();

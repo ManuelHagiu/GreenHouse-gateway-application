@@ -22,15 +22,15 @@ import java.util.logging.SimpleFormatter;
 
 public class LoRaClient implements WebSocket.Listener
 {
-  // the reference to the database repository
+  // the reference to the database service
   protected GreenHouseDbService greenHouseDbService;
   // the hardware connection string including the token
   protected final String HARDWARE_CONNECTION_STRING = "wss://iotnet.teracom.dk/app?token=vnoUggAAABFpb3RuZXQudGVyYWNvbS5ka62xBYncukPNmMTOh8xGfr4=";
-  // a logger object for logging the
+  // a logger object for logging
   private final Logger LOGGER = Logger.getLogger(LoRaClient.class.getName());
   //a file handler for writing the logs to a file
   private FileHandler fileHandler;
-  //the ratio for dividing the sensor data in order to convert it to a double
+
   protected WebSocket server = null;
 
   /**

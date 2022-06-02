@@ -7,7 +7,7 @@ import java.util.List;
 public interface GreenHouseRepository extends JpaRepository<GreenHouse,Integer>
 {
   public GreenHouse findTopByOrderByIdGreenhouseDesc();
-
+   // sql get all the actuator equal to true
   public List<GreenHouse> findAllByActuatorEquals(boolean value);
 
 }
